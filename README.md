@@ -11,7 +11,7 @@ right now it's used by [about](https://github.com/liftopia/about) and
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "jekyll-theme-static-pages"
+gem 'jekyll-theme-static-pages'
 ```
 
 And add this line to your Jekyll site's `_config.yml`:

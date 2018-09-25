@@ -6,10 +6,10 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Liftopia is crafted by a passionate team of makers, builders and thinkers.">
-	<link href="/assets/style.css" rel="stylesheet" type="text/css" media="all" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:700">
+	<link href="/assets/style.css" rel="stylesheet" type="text/css" media="all" />
 {% if page.custom_css %}{% for css_file in page.custom_css %}
-  <script src='/assets/{{ css_file }}.css' rel="stylesheet" type="text/css" media="all"></script>
+  <link href='/assets/{{ css_file }}.css' rel="stylesheet" type="text/css" media="all"></script>
 {% endfor %}{% endif %}
   <link rel="shortcut icon" href="/assets/favicon.ico" />
   <script defer src="/assets/fontawesome-all.min.js"></script>
