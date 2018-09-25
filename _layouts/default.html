@@ -1,1 +1,43 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{page.title}}{% else %}Liftopia{% endif %}</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Liftopia is crafted by a passionate team of makers, builders and thinkers.">
+	<link href="/assets/style.css" rel="stylesheet" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:700">
+{% if page.custom_css %}{% for css_file in page.custom_css %}
+  <script src='/assets/{{ css_file }}.css' rel="stylesheet" type="text/css" media="all"></script>
+{% endfor %}{% endif %}
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <script defer src="/assets/fontawesome-all.min.js"></script>
+</head>
+<body{% if page.slug %} class="{{ page.slug }}"{% endif %}>
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+  <script src="/assets/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $(".hamburger").click(function(){
+        let $menu   = $(".hamburger-nav");
+        if ($menu.hasClass('show')) {
+          $menu.removeClass('show')
+        } else {
+          $menu.addClass('show')
+        }
+      });
+    })
+  </script>
+{% if page.custom_js %}
+  {% for js_file in page.custom_js %}
+  <script src='/assets/{{ js_file }}.js' type="text/javascript"></script>
+  {% endfor %}
+{% endif %}
+{% if site.google-analytics.include %}
+  {% include gtm.html %}
+{% endif %}
+</body>
+</html>

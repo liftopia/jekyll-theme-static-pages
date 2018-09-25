@@ -1,0 +1,5 @@
+section.test {
+  &.whole { background-color: $pinky; }
+  &.half  { background-color: $lemon; }
+  &.third { background-color: $minty; }
+}

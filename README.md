@@ -1,11 +1,10 @@
 # jekyll-theme-static-pages
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+a responsive jekyll theme that can be used by static sites and uses [css-grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+and works back to IE11.
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
-
+right now it's used by [about](https://github.com/liftopia/about) and
+[giveaways](https://github.com/liftopia/giveaways) sites
 
 ## Installation
 
@@ -31,22 +30,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+copy pages and includes from here to your repo if you need to customize them
 
-## Contributing
+set up the following optional configuration variables in `_config.yml`:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+if you want Google Analytics add this to `_config.yml`:
+
+```yaml
+google-analytics:
+  include: true
+  id: <ga-id-goes-here>
+```
+
+### custom css and js
+
+you can add it in the front matter like this:
+```ruby
+custom_js:
+- test
+custom_css:
+- test
+```
+
+it will look in the asstes folder for `test.js` and `test.css`. you can have
+multiple files if you are so inclinded.
 
 ## Development
 
 To set up your environment to develop this theme, run `bundle install`.
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+Your theme is setup just like a normal Jekyll site! To test your theme, run
+`bundle exec jekyll serve` and open your browser at `http://localhost:4000`.
+This starts a Jekyll server using your theme. Add pages, documents, data, etc.
+like normal to test your theme's contents. As you make modifications to your
+theme and to your content, your site will regenerate and you should see the
+changes in the browser after a refresh, just like normal.
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `jekyll-theme-static-pages.gemspec` accordingly.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass`
+and `assets` tracked with Git will be bundled.

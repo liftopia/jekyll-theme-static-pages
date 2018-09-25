@@ -1,0 +1,71 @@
+// variables and mixins
+
+// debuggering colors
+$minty: #cfc;
+$lemon: #ffc;
+$pinky: #fcc;
+
+$liftopia-blue: #0085ca;
+
+$dark-bg: #1b2731;
+$dark-text: #49525A;
+$medium-text: lighten( $dark-text, 8% );
+$light-text: #a0a0a6;
+$lighter-text: lighten( $light-text, 20% );
+$lightest-text: lighten( $lighter-text, 10% );
+
+$side-padding: 8px;  // space around sections for smaller screens
+$row-padding: 0.5em;
+$half-row-padding: ($row-padding / 2);
+$double-row-padding: (2 * $row-padding);
+$triple-row-padding: (3 * $row-padding);
+
+// make them scroll below this
+$min-scroll-width: 400px;
+
+// breakpoints
+$sm-width: 640px;
+$med-width: 640px;
+$lg-width: 880px;
+$xl-width: 960px;
+
+// worker photo grid stuff based on breakpoints and columns
+$lg-photo-size: 214px;
+$sm-photo-size: 180px;
+$photo-grid-gap: 8px;
+$sm-photo-grid-width: (2 * $sm-photo-size) + $photo-grid-gap;
+$med-photo-grid-width: (3 * $sm-photo-size) + (2 * $photo-grid-gap);
+$lg-photo-grid-width: 100%;
+
+// TODO: figure out why we need this 3px (inline vs. block)
+$sm-photo2-top: -#{$sm-photo-size};
+$lg-photo2-top: -#{$lg-photo-size};
+// this should be the same as the top sizing
+$sm-popup-top: -#{$sm-photo-size};
+$lg-popup-top: -#{$lg-photo-size};
+
+$sm-popup-width: $sm-photo-size * 2 + $photo-grid-gap;
+$lg-popup-width: $lg-photo-size * 2 + $photo-grid-gap;
+
+// typography
+$header-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$header-font-weight: 500;
+$header-font-style: normal;
+$header-sizes: (
+  small: (
+    'h1': 24,
+    'h2': 19,
+    'h3': 18,
+    'h4': 16,
+    'h5': 16,
+    'h6': 16,
+  ),
+  medium: (
+    'h1': 32,
+    'h2': 24,
+    'h3': 20,
+    'h4': 18,
+    'h5': 16,
+    'h6': 16,
+  ),
+);

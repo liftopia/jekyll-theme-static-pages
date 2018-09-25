@@ -1,0 +1,72 @@
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: $dark-bg;
+  color: $dark-text;
+}
+
+p { line-height: 1.6em; }
+
+.white-row, .gray-row { padding-bottom: $row-padding; }
+
+// not the header, not the footer
+.white-row {
+  background-color: #fff;
+  padding-bottom: $row-padding;
+}
+
+.gray-row {
+  background: #eee;
+  background-image: url(/assets/bg-lines.png);
+}
+
+.blue {
+  background-color: #0085ca;
+  background-image: url(/assets/bg-box-blue.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 120px;
+  margin-top: 0;
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    font-size: 2em;
+    margin-top: 0.5em;
+  }
+}
+
+h1 { font-family: $header-font-family; }
+
+.spacer {
+  min-height: 88px;
+}
+
+.big-spacer {
+  min-height: 288px;
+}
+
+a {
+  color: $dark-text;
+  &:hover { color: #000; }
+}
+
+.page-not-found {
+  font-size: 1.5em;
+  min-height: 300px;
+  padding: 0 0.5em;
+  margin-bottom: 3em;
+  h3 { font-size: 1.5em; }
+  h1 {
+    margin-bottom: 0;
+    font-size: 3em;
+  }
+}
+
+@media (min-width: $lg-width) {
+  .blue {
+    min-height: 5em;
+    h1 { font-size: 3em; }
+  }
+}

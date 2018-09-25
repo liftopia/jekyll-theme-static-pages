@@ -1,0 +1,10 @@
+# jekyll configuration file for sample page
+
+# fill this in if you wanna have GA/GTM track your site
+# google-analytics:
+#   include: true
+  # id: <ga-id-goes-here>
+
+
+# add the next line if you want the language selector to show up
+language-selector: true

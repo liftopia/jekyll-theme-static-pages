@@ -1,0 +1,105 @@
+// grid, display, margin/padding for different kinds of containers
+// all should go in this file
+header, footer, .container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: $row-padding;
+  max-width: $sm-width;
+  margin: 0 auto;
+  padding: 0 $side-padding;
+}
+
+header {
+  grid-template-columns: repeat(4, 1fr);
+  .logo-wrapper { grid-column: 1 / 2; }
+  .nav { grid-column: 2 / span 4; }
+}
+
+.pre-footer { margin-bottom: $row-padding; }
+.content { padding-bottom: $row-padding; }
+
+.white-row, .gray-row { min-width: $min-scroll-width; }
+
+section {
+  margin-top: $row-padding;
+  padding: 4px;
+
+  &.whole, &.half, &.third { grid-column-end: span 6; }
+
+  &.medium { min-height: 180px; }
+  &.biggie { min-height: 333px; }
+}
+
+.row {
+  padding: $half-row-padding 0  $double-row-padding;
+  margin: $double-row-padding 0 $row-padding 0;
+}
+
+footer {
+  div { grid-column: 1 / 7; }
+  div.social { grid-column: 1 / 7; }
+  div.sponsors {
+    height: 1em;
+    visibility: hidden;
+  }
+}
+
+// photos on the team page
+.container {
+  &.photos {
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: $photo-grid-gap;
+    max-width: $sm-photo-grid-width;
+    .photo { grid-column-end: span 6; }
+  }
+}
+
+@media (min-width: $med-width) {
+  .container {
+    &.photos {
+      max-width: $med-photo-grid-width;
+      .photo { grid-column-end: span 4; }
+    }
+  }
+}
+
+@media (min-width: $lg-width) {
+  header, footer, .container {
+    min-width: $lg-width;
+  }
+
+  header {
+    .nav { grid-column: 3 / span 2; }
+  }
+
+  footer {
+    div.nav { grid-column: 1 / 4; }
+    div.languages { grid-column: 5 / 7; }
+    div.social { grid-column: 1 / 4; }
+    div.sponsors {
+      height: auto;
+      visibility: visible;
+      grid-column: 6 / 7;
+      grid-row: span 2;
+    }
+  }
+
+  section {
+    &.whole { grid-column-end: span 6; }
+    &.half { grid-column-end: span 3; }
+    &.third { grid-column-end: span 2;}
+  }
+
+  .container {
+    &.photos {
+      width: 100%;
+      .photo { grid-column-end: span 3; }
+    }
+  }
+}
+
+@media (min-width: $xl-width) {
+  header, footer {
+    min-width: $xl-width;
+  }
+}
